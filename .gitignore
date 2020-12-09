@@ -31,3 +31,6 @@
 *.out
 *.app
 /BigProject1/.vs/BigProject1/v16
+/BigProject1/BigProject1/Debug
+/BigProject1/BigProject1/x64/Debug
+/BigProject1/x64/Debug
