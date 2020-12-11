@@ -1,4 +1,4 @@
-#include "Rectangle.h"
+ï»¿#include "Rectangle.h"
 #include "graphics.h"
 Rectangle::Rectangle()
 	:Rectangle(0, 0, 0, 0, Color{ 0, 0, 0 }, Color{ 0, 255, 255 }) {}
@@ -55,13 +55,13 @@ int Rectangle::getRight()
 
 void Rectangle::draw()
 {
-	//ÉèÖÃ±ß½çÑÕÉ«
+	//è®¾ç½®è¾¹ç•Œé¢œè‰²
 	setcolor(EGERGB(getBoderRed(), getBoderGreen(), gerBoderBlue()));
-	//»­¿ÕÐÄÔ²
+	//ç”»ç©ºå¿ƒåœ†
 	rectangle(left, top, right, bottom);
-	//ÉèÖÃÌî³äÑÕÉ«
+	//è®¾ç½®å¡«å……é¢œè‰²
 	setfillcolor(EGERGB(fillColor->getRed(), fillColor->getGreen(), fillColor->getBlue()));
-	//Ìî³ä·¶Î§
+	//å¡«å……èŒƒå›´
 	floodfill((left + right) / 2, (top + bottom) / 2, EGERGB(getBoderRed(), getBoderGreen(), gerBoderBlue()));
 
 	getch();
