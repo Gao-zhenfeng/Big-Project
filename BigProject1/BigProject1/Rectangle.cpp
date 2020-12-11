@@ -65,4 +65,5 @@ void Rectangle::draw()
 	floodfill((left + right) / 2, (top + bottom) / 2, EGERGB(getBoderRed(), getBoderGreen(), gerBoderBlue()));
 
 	getch();
+	//cleardevice();
 }

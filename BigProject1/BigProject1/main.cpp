@@ -2,6 +2,8 @@
 #include "Rectangle.h"
 #include "Circle.h"
 
+//include "graphics.h"会报错，暂没查明原因
+
 int main()
 {
 	Circle c1{ 300, 300, 300, Color{0, 0, 0}, Color{0, 255, 255} };

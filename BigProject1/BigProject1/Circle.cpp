@@ -42,4 +42,5 @@ void Circle::draw()
 	floodfill(centerX, centerY, EGERGB(getBoderRed(), getBoderGreen(), gerBoderBlue()));
 
 	getch();
+	//cleardevice();
 }

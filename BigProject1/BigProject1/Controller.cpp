@@ -1,4 +1,4 @@
-#include "Controller.h"
+﻿#include "Controller.h"
 #include <graphics.h>
 Controller::Controller(int width_, int height_, Color boderColor)
 	: Width{ width_ }, Height{ height_ }, boderColor{ boderColor }
