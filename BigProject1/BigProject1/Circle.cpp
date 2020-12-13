@@ -1,16 +1,22 @@
-#include "Circle.h"
+ï»¿#include "Circle.h"
 #include "graphics.h"
-
+#include <iostream>
 Circle::Circle(int x, int y, int r, Color boderColor, Color fillColor, int Width, int Height)
-	: centerX{ x }, centerY{ y }, radius{ r }, Controller(Width, Height, boderColor)
+	: centerX{ x }, centerY{ y }, radius{ r }, boderColor{ boderColor }, fillColor{ fillColor },
+	Controller(Width, Height)
 {
-	this->fillColor = new Color{ fillColor };
+	filled = true;
 }
 
-Circle::Circle(int x, int y, int r, Color boderColor, Color fillColor)
-	: centerX{ x }, centerY{ y }, radius{ r }, Controller(boderColor)
+Circle::Circle(int x, int y, int r, Color boderColor)
+	: centerX{ x }, centerY{ y }, radius{ r }, boderColor{ boderColor }, Controller(640, 480)
 {
-	this->fillColor = new Color{ fillColor };
+	filled = false;
+	fillColor = Color{ 255, 255, 255 };
+}
+
+Circle::~Circle()
+{
 }
 
 void Circle::setCenterX(int x)
@@ -30,16 +36,74 @@ int Circle::getCenterY()
 	return centerY;
 }
 
+void Circle::setRadius(int r)
+{
+	this->radius = r;
+}
+
+int Circle::getRadius()
+{
+	return radius;
+}
+
+void Circle::getFilledColor()
+{
+	fillColor.getColor();
+}
+
+void Circle::getBoderColor()
+{
+	boderColor.getColor();
+}
+
+int Circle::getBoderRed()
+{
+	return boderColor.getRed();
+}
+
+int Circle::getBoderGreen()
+{
+	return boderColor.getGreen();
+}
+
+int Circle::gerBoderBlue()
+{
+	return boderColor.getBlue();
+}
+
+int Circle::getFilledRed()
+{
+	return fillColor.getRed();
+}
+
+int Circle::getFilledGreen()
+{
+	return fillColor.getGreen();
+}
+
+int Circle::gerFilledBlue()
+{
+	return fillColor.getBlue();
+}
+
+void Circle::setBoderColor(int r, int g, int b)
+{
+	boderColor.setColor(r, g, b);
+}
+
 void Circle::draw()
 {
-	//ÉèÖÃ±ß½çÑÕÉ«
+	//è®¾ç½®è¾¹ç•Œé¢œè‰²
 	setcolor(EGERGB(getBoderRed(), getBoderGreen(), gerBoderBlue()));
-	//»­¿ÕÐÄÔ²
+	//ç”»ç©ºå¿ƒåœ†
 	circle(centerX, centerY, radius);
-	//ÉèÖÃÌî³äÑÕÉ«
-	setfillcolor(EGERGB(fillColor->getRed(), fillColor->getGreen(), fillColor->getBlue()));
-	//Ìî³ä·¶Î§
-	floodfill(centerX, centerY, EGERGB(getBoderRed(), getBoderGreen(), gerBoderBlue()));
+
+	if (filled == true)
+	{//è®¾ç½®å¡«å……é¢œè‰²
+		setfillcolor(EGERGB(getFilledRed(), getFilledGreen(), gerFilledBlue()));
+		//å¡«å……èŒƒå›´
+		floodfill(centerX, centerY, EGERGB(getBoderRed(), getBoderGreen(), gerBoderBlue()));
+	}
 
 	getch();
 	//cleardevice();

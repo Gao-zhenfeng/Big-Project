@@ -1,14 +1,19 @@
+ï»¿#include <iostream>
 #include "Controller.h"
 #include "Rectangle.h"
 #include "Circle.h"
 
-//include "graphics.h"»á±¨´í£¬ÔÝÃ»²éÃ÷Ô­Òò
+//#include <graphics.h>
+//include "graphics.h"ä¼šæŠ¥é”™ï¼Œæš‚æ²¡æŸ¥æ˜ŽåŽŸå› 
 
 int main()
 {
-	Circle c1{ 300, 300, 300, Color{0, 0, 0}, Color{0, 255, 255} };
+	//Circle c1{ 300, 300, 50, Color{0, 0, 0} ,Color{255, 0, 255}, 640, 480 };
+	Circle c1{ 300, 300, 50, Color{0, 0, 0} };
+
 	c1.draw();
-	Rectangle r1{ 300, 200, 200, 300, Color {123,255,234}, Color{255,0,0} };
+
+	Rectangle r1{ 300, 200, 200, 300, Color {123,255,234} };
 	r1.draw();
 
 	return 0;
