@@ -11,6 +11,7 @@ using namespace std;
 
 int main()
 {
+	Controller S1{ 1080,720 };
 	Circle c1{ 300, 300, 50, Color{0, 0, 0} };
 	c1.draw();
 

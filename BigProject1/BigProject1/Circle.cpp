@@ -1,20 +1,14 @@
 ﻿#include "Circle.h"
 #include "graphics.h"
 
-Circle::Circle(int x, int y, int r, Color boderColor, Color fillColor, int Width, int Height)
-	: centerX{ x }, centerY{ y }, radius{ r }, boderColor{ boderColor }, fillColor{ fillColor },
-	Controller(640, 480)
-
+Circle::Circle(int x, int y, int r, Color boderColor, Color fillColor)
+	: centerX{ x }, centerY{ y }, radius{ r }, Shape(boderColor, fillColor)
 {
-	filled = true;
 }
 
 Circle::Circle(int x, int y, int r, Color boderColor)
-	: centerX{ x }, centerY{ y }, radius{ r }, boderColor{ boderColor },
-	Controller(640, 480)			//血泪教训，在子类显示调用基类构造函数， 是一种良好的编程习惯
+	: centerX{ x }, centerY{ y }, radius{ r }, Shape(boderColor) 		//血泪教训，在子类显示调用基类构造函数， 是一种良好的编程习惯
 {
-	filled = false;
-	fillColor = Color{ 255, 255, 255 };
 }
 
 Circle::~Circle()
@@ -48,57 +42,6 @@ int Circle::getRadius()
 	return radius;
 }
 
-void Circle::getFilledColor()
-{
-	fillColor.getColor();
-}
-
-void Circle::getBoderColor()
-{
-	boderColor.getColor();
-}
-
-int Circle::getBoderRed()
-{
-	return boderColor.getRed();
-}
-
-int Circle::getBoderGreen()
-{
-	return boderColor.getGreen();
-}
-
-int Circle::gerBoderBlue()
-{
-	return boderColor.getBlue();
-}
-
-int Circle::getFilledRed()
-{
-	return fillColor.getRed();
-}
-
-int Circle::getFilledGreen()
-{
-	return fillColor.getGreen();
-}
-
-int Circle::gerFilledBlue()
-{
-	return fillColor.getBlue();
-}
-
-void Circle::setBoderColor(int r, int g, int b)
-{
-	boderColor.setColor(r, g, b);
-}
-
-void Circle::setFilledColor(int r, int g, int b)
-{
-	boderColor.setColor(r, g, b);
-	filled = true;
-}
-
 void Circle::draw()
 {
 	//设置边界颜色
@@ -106,7 +49,7 @@ void Circle::draw()
 	//画空心圆
 	circle(centerX, centerY, radius);
 
-	if (filled == true)
+	if (getFilled() == true)
 	{//设置填充颜色
 		setfillcolor(EGERGB(getFilledRed(), getFilledGreen(), gerFilledBlue()));
 		//填充范围
@@ -114,6 +57,5 @@ void Circle::draw()
 	}
 
 	getch();
-	getchar();
 	//cleardevice();
 }

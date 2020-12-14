@@ -1,23 +1,17 @@
 ﻿#pragma once
-#include "Controller.h"
+#include "Shape.h"
 
-class Rectangle : public Controller
+class Rectangle : public Shape
 {
 public:
 	Rectangle() = default;
-	Rectangle(int top, int bottom, int left, int right, Color boderColor, Color fillColor, int Width, int Height);
+	Rectangle(int top, int bottom, int left, int right, Color boderColor, Color fillColor);
 	Rectangle(int top, int bottom, int left, int right, Color boderColor);
 	void setCoordinate(int top, int bottom, int left, int right);
 	int getTop();
 	int getBottom();
 	int getLeft();
 	int getRight();
-	bool getFilled();
-
-	int getBoderRed();//获取边缘颜色
-	int getBoderGreen();
-	int gerBoderBlue();
-	void setBoderColor(int r, int g, int b);
 
 	~Rectangle();
 
@@ -28,7 +22,4 @@ private:
 	int bottom{ 0 };
 	int left{ 0 };
 	int right{ 0 };
-	Color boderColor;
-	Color fillColor;
-	bool filled{ false };
 };

@@ -11,5 +11,4 @@ Controller::Controller(int width_, int height_)
 Controller::~Controller()
 {
 	closegraph();
-	//setbkcolor()
 }
