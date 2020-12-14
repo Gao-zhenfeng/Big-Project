@@ -88,7 +88,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard>stdcpp17</LanguageStandard>
       <AdditionalOptions>/Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard_C>stdc11</LanguageStandard_C>
     </ClCompile>
@@ -105,7 +105,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard>stdcpp17</LanguageStandard>
       <AdditionalOptions>/Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard_C>stdc11</LanguageStandard_C>
     </ClCompile>
@@ -123,7 +123,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>D:\vs2019\VC\Tools\MSVC\14.27.29110\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard>stdcpp17</LanguageStandard>
       <AdditionalOptions>/Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard_C>stdc11</LanguageStandard_C>
     </ClCompile>
@@ -141,7 +141,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard>stdcpp17</LanguageStandard>
       <AdditionalOptions>/Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard_C>stdc11</LanguageStandard_C>
     </ClCompile>
@@ -156,6 +156,7 @@
     <ClCompile Include="Circle.cpp" />
     <ClCompile Include="Color.cpp" />
     <ClCompile Include="Controller.cpp" />
+    <ClCompile Include="Line.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="Rectangle.cpp" />
@@ -165,6 +166,7 @@
     <ClInclude Include="Circle.h" />
     <ClInclude Include="Color.h" />
     <ClInclude Include="Controller.h" />
+    <ClInclude Include="Line.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="Rectangle.h" />
     <ClInclude Include="Triangle.h" />

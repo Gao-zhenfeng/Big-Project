@@ -1,15 +1,17 @@
 ﻿#include "Circle.h"
 #include "graphics.h"
-#include <iostream>
+
 Circle::Circle(int x, int y, int r, Color boderColor, Color fillColor, int Width, int Height)
 	: centerX{ x }, centerY{ y }, radius{ r }, boderColor{ boderColor }, fillColor{ fillColor },
-	Controller(Width, Height)
+	Controller(640, 480)
+
 {
 	filled = true;
 }
 
 Circle::Circle(int x, int y, int r, Color boderColor)
-	: centerX{ x }, centerY{ y }, radius{ r }, boderColor{ boderColor }, Controller(640, 480)
+	: centerX{ x }, centerY{ y }, radius{ r }, boderColor{ boderColor },
+	Controller(640, 480)			//血泪教训，在子类显示调用基类构造函数， 是一种良好的编程习惯
 {
 	filled = false;
 	fillColor = Color{ 255, 255, 255 };
@@ -91,6 +93,12 @@ void Circle::setBoderColor(int r, int g, int b)
 	boderColor.setColor(r, g, b);
 }
 
+void Circle::setFilledColor(int r, int g, int b)
+{
+	boderColor.setColor(r, g, b);
+	filled = true;
+}
+
 void Circle::draw()
 {
 	//设置边界颜色
@@ -106,5 +114,6 @@ void Circle::draw()
 	}
 
 	getch();
+	getchar();
 	//cleardevice();
 }

@@ -25,6 +25,7 @@ public:
 	int gerFilledBlue();
 
 	void setBoderColor(int r, int g, int b);
+	void setFilledColor(int r, int g, int b);
 
 	void draw() override;
 private:
