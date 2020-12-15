@@ -3,7 +3,7 @@
 class Circle : public Shape
 {
 public:
-	Circle() = default;
+	Circle();
 	Circle(int x, int y, int r, Color boderColor, Color fillColor);
 	Circle(int x, int y, int r, Color boderColor);
 	~Circle();
@@ -19,4 +19,5 @@ private:
 	int centerX{ 0 };
 	int centerY{ 0 };
 	int radius{ 0 };
+	friend class Controller;
 };

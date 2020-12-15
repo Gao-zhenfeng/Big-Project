@@ -1,13 +1,26 @@
 ﻿#pragma once
-#include "Color.h"
+
+#include <iostream>
+#include <vector>
+#include "Circle.h"
+#include "Triangle.h"
+#include "Rectangle.h"
+
+using std::string;
+using std::vector;
+
 class Controller
 {
 public:
-	Controller() = default;
+	Controller();
 	Controller(int width_, int height_);
 	~Controller();
 
 private:
-	int Width{ 800 };
-	int Height{ 600 };
+	int Width;
+	int Height;
+	std::string shape;
+	RECTANGLE r;
+	Circle c;
+	//Triangle t;
 };

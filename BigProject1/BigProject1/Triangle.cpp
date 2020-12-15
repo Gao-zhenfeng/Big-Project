@@ -1,6 +1,8 @@
 ﻿#include "Triangle.h"
 #include "graphics.h"
-Triangle::Triangle() : p1{ 0, 0 }, p2{ 0, 0 }, p3{ 0,0 }
+Triangle::Triangle()
+	: Triangle(Point{ 0, 0 }, Point{ 0, 0 }, Point{ 0, 0 },
+		Color{ 0, 0, 0 }, Color{ 0, 0, 0 })
 {
 }
 

@@ -80,6 +80,6 @@ void Shape::setBoderColor(int r, int g, int b)
 
 void Shape::setFilledColor(int r, int g, int b)
 {
-	boderColor->setColor(r, g, b);
+	fillColor->setColor(r, g, b);
 	filled = true;
 }

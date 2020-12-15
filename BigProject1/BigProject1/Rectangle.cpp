@@ -1,24 +1,29 @@
 ﻿#include "Rectangle.h"
 #include "graphics.h"
 
-Rectangle::Rectangle(int top, int bottom, int left, int right,
+RECTANGLE::RECTANGLE()
+	: RECTANGLE(0, 0, 0, 0, Color{ 0, 0, 0 }, Color{ 0, 0, 0 })
+{
+}
+
+RECTANGLE::RECTANGLE(int top, int bottom, int left, int right,
 	Color boderColor, Color fillColor)
 	: top{ top }, bottom{ bottom }, left{ left }, right{ right },
 	Shape(boderColor, fillColor)
 {
 }
 
-Rectangle::Rectangle(int top, int bottom, int left, int right, Color boderColor)
+RECTANGLE::RECTANGLE(int top, int bottom, int left, int right, Color boderColor)
 	: top{ top }, bottom{ bottom }, left{ left }, right{ right },
 	Shape(boderColor)
 {
 }
 
-Rectangle::~Rectangle()
+RECTANGLE::~RECTANGLE()
 {
 }
 
-void Rectangle::setCoordinate(int top, int bottom, int left, int right)
+void RECTANGLE::setCoordinate(int top, int bottom, int left, int right)
 {
 	this->top = top;
 	this->bottom = bottom;
@@ -26,27 +31,27 @@ void Rectangle::setCoordinate(int top, int bottom, int left, int right)
 	this->right = right;
 }
 
-int Rectangle::getTop()
+int RECTANGLE::getTop()
 {
 	return top;
 }
 
-int Rectangle::getBottom()
+int RECTANGLE::getBottom()
 {
 	return bottom;
 }
 
-int Rectangle::getLeft()
+int RECTANGLE::getLeft()
 {
 	return left;
 }
 
-int Rectangle::getRight()
+int RECTANGLE::getRight()
 {
 	return right;
 }
 
-void Rectangle::draw()
+void RECTANGLE::draw()
 {
 	//设置边界颜色
 	setcolor(EGERGB(getBoderRed(), getBoderGreen(), gerBoderBlue()));

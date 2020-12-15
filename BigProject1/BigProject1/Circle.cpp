@@ -1,6 +1,11 @@
 ﻿#include "Circle.h"
 #include "graphics.h"
 
+Circle::Circle()
+	:Circle(0, 0, 0, Color{ 0,0,0 }, Color{ 0,0,0 })
+{
+}
+
 Circle::Circle(int x, int y, int r, Color boderColor, Color fillColor)
 	: centerX{ x }, centerY{ y }, radius{ r }, Shape(boderColor, fillColor)
 {
